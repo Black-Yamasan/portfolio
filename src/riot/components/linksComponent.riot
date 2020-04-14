@@ -1,11 +1,40 @@
 <links-component>
-  <section class="u-mb-100">
-    <h2 class="o-heading u-ta-c">Links</h2>
+  <section>
+    <h2 class="o-heading u-ta-c u-mb-60">Links</h2>
+    <ul class="l-content c-link">
+      <li class="c-link__child" each={ (item, i) in state.items }>
+        <a class="c-link__link u-text-link" href="{item.url}" target="_blank">{item.name}</a>
+      </li>
+    </ul>
   </section>
 
   <script>
     export default {
-      
+      state: {
+        items: [
+          { id: 'github', url: '#', name: 'GitHub' },
+          { id: 'qiita', url: '#', name: 'Qiita' },
+          { id: 'twitter', url: '#', name: 'Twitter' }
+        ]
+      }
     }
   </script>
+
+  <style>
+    :host {
+      display: block;
+    }
+
+    .c-link {
+      display: flex;
+      justify-content: center;
+    }
+
+    .c-link__child {
+      margin: 0 20px;
+      font-size: 1rem;
+    }
+
+  </style>
+
 </links-component>

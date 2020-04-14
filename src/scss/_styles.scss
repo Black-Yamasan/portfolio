@@ -17,3 +17,10 @@
 body {
   color: $DEFAULT_COLOR;
 }
+
+.l-content {
+  max-width: $MEDIA_TAB;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
