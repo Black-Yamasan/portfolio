@@ -5,9 +5,16 @@
 .o-heading {
   font-family: $FONT_RUBIK;
   font-weight: $FONT_W_M;
-  letter-spacing: 100/1000+em;
-  font-size: 2rem;
-  line-height: percentage(24/18);
+  letter-spacing: 150/1000+em;
+  font-size: 2.8rem;
+  line-height: percentage(32/28);
+}
+
+.o-sub-heading {
+  font-weight: $FONT_W_M;
+  letter-spacing: 80/1000+em;
+  font-size: 1.8rem;
+  line-height: percentage(30/18);
 }
 
 .u-text-link {

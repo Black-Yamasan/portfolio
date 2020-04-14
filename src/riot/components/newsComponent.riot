@@ -1,5 +1,39 @@
 <news-component>
-  <section class="u-mb-100">
-    <h2 class="o-heading u-ta-c">News</h2>
+  <section class="l-section">
+    <h2 class="o-heading u-ta-c u-mb-60">News</h2>
+    <ul class="c-news">
+      <li class="c-news__child"><a href="#" class="c-news__link" target="_blank">ほげほげほげほげほげ！</a></li>
+    </ul>
   </section>
+
+  <script>
+    export default {
+      state: {
+        items: []
+      }
+    }
+  </script>
+
+  <style>
+    :host {
+      display: block;
+    }
+
+    .c-news {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .c-news__child {
+      margin-bottom: 1em;
+      font-size: 1.4rem;
+    }
+
+    .c-news__child:last-of-type {
+      margin-bottom: 0;
+    }
+  </style>
 </news-component>

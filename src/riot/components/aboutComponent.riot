@@ -1,5 +1,99 @@
 <about-component>
-  <section class="u-mb-100">
-    <h2 class="o-heading u-ta-c">About</h2>
+  <section class="l-section">
+    <h2 class="o-heading u-ta-c u-mb-60">About</h2>
+    <section class="l-content u-mb-80">
+      <h3 class="o-sub-heading u-ta-c u-mb-40">◯請けられること<br>×請けても誰も幸せにならないこと</h3>
+      <ul class="c-kind">
+        <li class="c-kind__child" each={ (kind, i) in state.kinds }>
+          <span if={kind.isEnable}>◯{kind.name}</span>
+          <span if={!kind.isEnable}>×{kind.name}</span>
+        </li>
+      </ul>
+    </section>
+    <section class="l-content">
+      <h3 class="o-sub-heading u-ta-c u-mb-40">Langs and Tools</h3>
+      <ul class="c-langs">
+        <li class="c-langs__child" each={ (lang, i) in state.langs }>{lang.name}</li>
+      </ul>
+    </section>
   </section>
+
+  <script>
+    export default {
+      state: {
+        kinds:[
+          { isEnable: true, name: 'WEBサイトのコーディング' },
+          { isEnable: true, name: 'WordPress構築(テーマ作成・カスタマイズ)' },
+          { isEnable: true, name: 'WEBのフロントエンドの実装' },
+          { isEnable: false, name: 'デザイン' },
+          { isEnable: false, name: 'サーバーサイド・インフラ関連' }
+        ],
+         langs: [
+          { name: 'HTML5' },
+          { name: 'CSS3' },
+          { name: 'SCSS' },
+          { name: 'JavaScript(VanillaJs)' },
+          { name: 'jQuery' },
+          { name: 'ES2015' },
+          { name: 'Riot.js' },
+          { name: 'Vue.js(勉強中)' },
+          { name: 'PHP' },
+          { name: 'WordPress' },
+          { name: 'EJS' },
+          { name: 'Pug' },
+          { name: 'GraphQL(勉強中)' },
+          { name: 'Gulp' },
+          { name: 'Webpack' },
+          { name: 'Docker' },
+          { name: 'Git' },
+          { name: 'Photoshop' },
+          { name: 'Illustrator' },
+          { name: 'Adobe XD' }
+        ],
+      }
+    }
+  </script>
+
+  <style>
+    :host {
+      display: block;
+    }
+
+    .c-kind {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .c-kind__child {
+      margin-bottom: 1em;
+      font-size: 1.4rem;
+    }
+
+    .c-langs {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .c-langs__child {
+      position: relative;
+      margin-right: 0.8em;
+      padding-right: 0.8em;
+      font-size: 1.4rem;
+      line-height: 1.8;
+    }
+
+    .c-langs__child:before {
+      position: absolute;
+      right: -0.4em;
+      top: 0;
+      content: '/';
+    }
+
+    .c-langs__child:last-of-type:before {
+      content: none;
+    }
+  </style>
 </about-component>

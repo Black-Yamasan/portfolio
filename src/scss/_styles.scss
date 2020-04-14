@@ -14,13 +14,45 @@
 @import './components/links';
 @import './components/news';
 
-body {
+html {
   color: $DEFAULT_COLOR;
+  overflow-y: scroll;
+  font-size: $FONT_SIZE;
+  font-family: $FONT_NOTO;
+  font-weight: $FONT_W_R;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 120/1000+em;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: $COLOR_BL;
 }
 
 .l-content {
-  max-width: $MEDIA_TAB;
+  max-width: $MEDIA_TAB+px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
+}
+
+.l-section {
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid $BORDER_GRAY;
+
+  &-last {
+    padding-bottom: 100px;
+  }
 }
