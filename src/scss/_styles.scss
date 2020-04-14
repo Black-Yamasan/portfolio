@@ -1,13 +1,13 @@
 @import './config';
 
+@import './mixins/media';
+
 @import './utils/reset';
 @import './utils/icon';
 @import './utils/text';
 @import './utils/margin';
 
 @import './libs/easing';
-
-@import './mixins/media';
 
 @import './components/mv';
 @import './components/about';

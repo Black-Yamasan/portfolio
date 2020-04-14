@@ -1,11 +1,13 @@
 <news-component>
   <section class="l-section">
     <h2 class="o-heading u-ta-c u-mb-60">News</h2>
-    <ul class="c-news">
-      <li class="c-news__child" each={ (item, i) in state.items }>
-        <a href="{ item.url }" class="c-news__link" target="_blank">{ item.title }</a>
-      </li>
-    </ul>
+    <div class="l-content">
+      <ul class="c-news">
+        <li class="c-news__child" each={ (item, i) in state.items }>
+          <a href="{ item.url }" class="c-news__link" target="_blank">{ item.title }</a>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <script>
@@ -49,9 +51,16 @@
       align-items: center;
     }
 
+    @media screen and ( max-width: 768px ) {
+      .c-news {
+        display: block;
+      }
+    }
+
     .c-news__child {
       margin-bottom: 1em;
       font-size: 1.4rem;
+      line-height: 1.5;
     }
 
     .c-news__child:last-of-type {
