@@ -25,12 +25,13 @@ module.exports = {
     filename: '[name]'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, `${destDir}`),
+    contentBase: path.join(__dirname, `${destDir}`),
     inline: isProd,
     open: true,
     openPage: '',
     host: config.get('config.host'),
-    disableHostCheck: true,
+    publicPath: '/assets/js/',
+    // disableHostCheck: true,
     watchContentBase: true,
     port: config.get('config.port')
   },
@@ -90,7 +91,7 @@ module.exports = {
           loader: 'sass-loader',
           options: {
             sourceMap: !isProd,
-            outputStyle: 'expanded'
+            // outputStyle: 'expanded'
           }
         }
       ]
@@ -118,5 +119,11 @@ module.exports = {
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      $Style: path.resolve(__dirname, 'src/scss/'),
+      $Riot: path.resolve(__dirname, 'src/riot/')
+    }
+  }
 };
