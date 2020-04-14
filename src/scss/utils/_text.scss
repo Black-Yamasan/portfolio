@@ -24,4 +24,11 @@
 .u-text-link {
   text-decoration: none;
   color: $COLOR_BL;
+  transition: all $HOVER_ANIME_SPEED $HOVER_ANIME_EASING;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $COLOR_SKY;
+    }
+  }
 }
