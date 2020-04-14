@@ -1,0 +1,18 @@
+@import './config';
+
+@import './utils/reset';
+@import './utils/icon';
+@import './utils/heading';
+
+@import './libs/easing';
+
+@import './mixins/media';
+
+@import './components/mv';
+@import './components/about';
+@import './components/links';
+@import './components/news';
+
+body {
+  color: $DEFAULT_COLOR;
+}

@@ -1,0 +1,11 @@
+@mixin MEDIA_TAB {
+  @media screen and ( max-width: #{$MEDIA_TAB}px ) {
+    @content;
+  }
+}
+
+@mixin MEDIA_SP {
+  @media screen and ( max-width: #{$MEDIA_SP}px ) {
+    @content;
+  }
+}

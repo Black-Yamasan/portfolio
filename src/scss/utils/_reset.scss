@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-weight: 400;
+  line-height: percentage(20/16);
+  letter-spacing: 120/1000+em;
+}
+
+*:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-weight: 400;
+}
+
+article,
+header,
+footer,
+aside,
+main,
+button {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+ol, ul {
+  list-style: none;
+}
