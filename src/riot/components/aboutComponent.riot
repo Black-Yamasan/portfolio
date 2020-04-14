@@ -1,7 +1,14 @@
 <about-component>
   <section class="l-section l-section-first">
     <h2 class="o-heading u-ta-c u-mb-60">About</h2>
-    <section class="l-content u-mb-80">
+    <section class="l-content u-mb-90">
+      <h3 class="o-sub-heading u-ta-c u-mb-40">Introduction</h3>
+      <div class="c-intro">
+        <p class="o-text">何でもガリガリ書くよりは、仕様や懸念事項など(ちょっと面倒臭いこと)を考えながら進めていくタイプです。</p>
+        <p class="o-text">極度の人見知りですが、ウォーターフォール・アジャイルどちらも抵抗はありません。</p>
+      </div>
+    </section>
+    <section class="l-content u-mb-90">
       <h3 class="o-sub-heading u-ta-c u-mb-40">◯請けられること<br>×請けても誰も幸せにならないこと</h3>
       <ul class="c-kind">
         <li class="c-kind__child" each={ (kind, i) in state.kinds }>
@@ -59,6 +66,11 @@
       display: block;
     }
 
+    .c-intro {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
     .c-kind {
       display: flex;
       flex-wrap: wrap;
@@ -77,6 +89,10 @@
       margin-bottom: 1em;
       font-size: 1.4rem;
       line-height: 1.8;
+    }
+
+    .c-kind__child:last-of-type {
+      margin-bottom: 0;
     }
 
     .c-langs {

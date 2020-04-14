@@ -12,13 +12,18 @@
 
 .o-sub-heading {
   font-weight: $FONT_W_M;
-  letter-spacing: 80/1000+em;
+  letter-spacing: 100/1000+em;
   font-size: 1.8rem;
   line-height: percentage(30/18);
 
   @include MEDIA_SP {
     font-size: 1.6rem;
   }
+}
+
+.o-text {
+  font-size: 1.4rem;
+  line-height: percentage(24/14);
 }
 
 .u-text-link {
