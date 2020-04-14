@@ -1,6 +1,8 @@
-import * as riot from 'riot'
 import '../scss/_styles.scss';
-import linksComponent from '$Riot/components/linksComponent.riot';
+import { showNews } from '$Controller/_news';
+import { showAbout } from '$Controller/_about';
+import { showLinks } from '$Controller/_links';
 
-riot.register('links-component', linksComponent);
-riot.mount('links-component');
+showNews();
+showAbout();
+showLinks();

@@ -123,7 +123,9 @@ module.exports = {
   resolve: {
     alias: {
       $Style: path.resolve(__dirname, 'src/scss/'),
-      $Riot: path.resolve(__dirname, 'src/riot/')
+      $RiotComponent: path.resolve(__dirname, 'src/riot/components/'),
+      $Model: path.resolve(__dirname, 'src/js/Model'),
+      $Controller: path.resolve(__dirname, 'src/js/Controller')
     }
   }
 };
