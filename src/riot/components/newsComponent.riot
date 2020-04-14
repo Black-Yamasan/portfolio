@@ -2,15 +2,37 @@
   <section class="l-section">
     <h2 class="o-heading u-ta-c u-mb-60">News</h2>
     <ul class="c-news">
-      <li class="c-news__child"><a href="#" class="c-news__link" target="_blank">ほげほげほげほげほげ！</a></li>
+      <li class="c-news__child" each={ (item, i) in state.items }>
+        <a href="{ item.url }" class="c-news__link" target="_blank">{ item.title }</a>
+      </li>
     </ul>
   </section>
 
   <script>
+    const KEY = 'Basic Zm5BRHBYcGMzbkFDRThkY29VRm9FVXpWYWJ3Ti1iOVlnVGQxUElVYTpuZXdzOnNlcnZlcg==';
+
     export default {
       state: {
         items: []
-      }
+      },
+      onBeforeMount() {
+        fetch('https://graphql.fauna.com/graphql', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            Authorization: KEY
+          },
+          body: JSON.stringify({query: "{ allLists(_size: 3){data {title url}} }"})
+        })
+        .then(r => r.json())
+        .then((res) => {
+          console.log(res)
+          this.update({
+            items: res.data.allLists.data
+          })
+        });
+      },
     }
   </script>
 
