@@ -1,0 +1,7 @@
+.DS_Store
+node_modules
+htdocs/*
+dist/
+!dist/
+dist/assets/
+yarn.lock
