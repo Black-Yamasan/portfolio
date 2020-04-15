@@ -25,10 +25,7 @@
       },
       onChange(e) {
         this.update({
-          isDark: e.target.checked,
-          handleClassNames: {
-            
-          }
+          isDark: e.target.checked
         });
       },
       onUpdated() {
@@ -78,6 +75,7 @@
       border-radius: 10px;
       border: 1px solid #ccc;
       background: #222;
+      cursor: pointer;
     }
 
     .c-toggle-theme__handle {
@@ -90,7 +88,6 @@
       border: 1px solid #ccc;
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
       background: #fff;
-      cursor: pointer;
       transition: all 0.2s ease;
       transform: translate(100%, 0);
     }
