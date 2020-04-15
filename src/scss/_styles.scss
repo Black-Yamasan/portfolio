@@ -49,6 +49,10 @@ a {
   color: $COLOR_BL;
 }
 
+.l-wrapper {
+  overflow: hidden;
+}
+
 .l-content {
   max-width: $MEDIA_TAB+px;
   margin-left: auto;
