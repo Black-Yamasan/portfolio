@@ -4,7 +4,11 @@
       <div class="c-toggle-theme">
         <label for="js-toggle-theme__check" class="c-toggle-theme__label">
           <input id="js-toggle-theme__check" type="checkbox" class="c-toggle-theme__check" name="dark" checked={state.isDark} onchange="{onChange}">
-          <div class="c-toggle-theme__bg">
+          <div class={ classNames({
+            'c-toggle-theme__bg': true,
+            'is-light': !state.isDark
+            })
+          }>
             <div class={ classNames({
               'c-toggle-theme__handle': true,
               'is-light': !state.isDark
@@ -74,8 +78,12 @@
       height: 20px;
       border-radius: 10px;
       border: 1px solid #ccc;
-      background: #222;
+      background: #fff;
       cursor: pointer;
+    }
+
+    .c-toggle-theme__bg.is-light {
+      background: #222;
     }
 
     .c-toggle-theme__handle {
