@@ -1,0 +1,10 @@
+.js-scrollIn {
+  opacity: 0;
+  transform: translate(0, 30px);
+  transition: all 0.5s ease;
+
+  &.is-scrollIn {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

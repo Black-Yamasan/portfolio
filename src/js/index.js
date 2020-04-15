@@ -5,8 +5,8 @@ import { showAbout } from '$Controller/_about';
 import { showLinks } from '$Controller/_links';
 import { showChangeTheme } from '$Controller/_changeTheme';
 
-showNews();
+showChangeTheme();
 showAbout();
+showNews();
 showLinks();
 showMv();
-showChangeTheme();

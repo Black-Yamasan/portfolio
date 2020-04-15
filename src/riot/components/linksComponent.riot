@@ -1,9 +1,9 @@
 <links-component>
   <section class="l-section-last">
-    <div class="o-heading u-ta-c u-mb-60">
+    <div class="o-heading u-ta-c u-mb-60 js-scrollIn">
       <h2 class="o-heading__inner"><span class="o-heading__text">Links</span></h2>
     </div>
-    <ul class="l-content c-link">
+    <ul class="l-content c-link js-scrollIn">
       <li class="c-link__child" each={ (item, i) in state.items }>
         <a class="c-link__link u-text-link" href="{item.url}" target="_blank">{item.name}</a>
       </li>
@@ -11,6 +11,7 @@
   </section>
 
   <script>
+    import { scrollAddClass } from '$Controller/_scrollAddClass';
     export default {
       state: {
         items: [
@@ -18,7 +19,11 @@
           { id: 'qiita', url: 'https://qiita.com/', name: 'Qiita' },
           { id: 'twitter', url: 'https://twitter.com/yama_twUse', name: 'Twitter' }
         ]
-      }
+      },
+      onMounted() {
+        const $scrollIn = this.$$('.js-scrollIn');
+        scrollAddClass($scrollIn, 1);
+      },
     }
   </script>
 

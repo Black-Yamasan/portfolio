@@ -1,9 +1,9 @@
 <news-component>
   <section class="l-section">
-    <div class="o-heading u-ta-c u-mb-60">
+    <div class="o-heading u-ta-c u-mb-60 js-scrollIn">
       <h2 class="o-heading__inner"><span class="o-heading__text">News</span></h2>
     </div>
-    <div class="l-content">
+    <div class="l-content js-scrollIn">
       <ul class="c-news">
         <li class="c-news__child" each={ (item, i) in state.items }>
           <a href="{ item.url }" class="c-news__link u-text-link" target="_blank">{ item.title }</a>
@@ -13,6 +13,7 @@
   </section>
 
   <script>
+    import { scrollAddClass } from '$Controller/_scrollAddClass';
     const KEY = 'Basic Zm5BRHBYcGMzbkFDRThkY29VRm9FVXpWYWJ3Ti1iOVlnVGQxUElVYTpuZXdzOnNlcnZlcg==';
 
     export default {
@@ -37,6 +38,11 @@
       //     })
       //   });
       // },
+      onMounted() {
+        console.log('??');
+        const $scrollIn = this.$$('.js-scrollIn');
+        scrollAddClass($scrollIn, 1);
+      },
     }
   </script>
 
