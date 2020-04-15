@@ -17,24 +17,24 @@
       state: {
         items: []
       },
-      onBeforeMount() {
-        fetch('https://graphql.fauna.com/graphql', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            Authorization: KEY
-          },
-          body: JSON.stringify({query: "{ allLists(_size: 3){data {title url}} }"})
-        })
-        .then(r => r.json())
-        .then((res) => {
-          console.log(res)
-          this.update({
-            items: res.data.allLists.data
-          })
-        });
-      },
+      // onBeforeMount() {
+      //   fetch('https://graphql.fauna.com/graphql', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //       'Accept': 'application/json',
+      //       Authorization: KEY
+      //     },
+      //     body: JSON.stringify({query: "{ allLists(_size: 3){data {title url}} }"})
+      //   })
+      //   .then(r => r.json())
+      //   .then((res) => {
+      //     console.log(res)
+      //     this.update({
+      //       items: res.data.allLists.data
+      //     })
+      //   });
+      // },
     }
   </script>
 

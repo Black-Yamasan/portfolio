@@ -3,8 +3,10 @@ import { showMv } from '$Controller/_mv';
 import { showNews } from '$Controller/_news';
 import { showAbout } from '$Controller/_about';
 import { showLinks } from '$Controller/_links';
+import { showChangeTheme } from '$Controller/_changeTheme';
 
 showNews();
 showAbout();
 showLinks();
 showMv();
+showChangeTheme();

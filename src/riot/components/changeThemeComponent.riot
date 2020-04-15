@@ -1,0 +1,66 @@
+<change-theme-component>
+  <div class="l-toggle-wrap">
+    <div class="l-toggle">
+      <div class="c-toggle-theme">
+        <label for="js-toggle-theme__check" class="c-toggle-theme__label">
+          <input id="js-toggle-theme__check" type="checkbox" class="c-toggle-theme__check" name="dark">
+          <div class="c-toggle-theme__bg">
+            <div class="c-toggle-theme__handle"></div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  </script>
+
+  <style>
+    :host {
+      display: block;
+    }
+
+    .l-toggle-wrap {
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .l-toggle {
+      position: relative;
+    }
+
+    .c-toggle-theme {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .c-toggle-theme__label {
+      display: block;
+      width: 100%;
+    }
+
+    .c-toggle-theme__check {
+      opacity: 0;
+      width: 0;
+    }
+
+    .c-toggle-theme__bg {
+      width: 40px;
+      height: 20px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      background: #222;
+    }
+
+    .c-toggle-theme__handle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+      background: #fff;
+      cursor: pointer;
+    }
+  </style>
+</change-theme-component>
