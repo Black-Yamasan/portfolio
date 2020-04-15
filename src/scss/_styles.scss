@@ -35,6 +35,11 @@ body {
     background: $DARK_THEME_BLACK;
     color: #fff;
   }
+
+  &.is-light {
+    background: #fff;
+    color: $DEFAULT_COLOR;
+  }
 }
 
 a {

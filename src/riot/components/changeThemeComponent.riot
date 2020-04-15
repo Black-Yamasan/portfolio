@@ -3,9 +3,12 @@
     <div class="l-toggle">
       <div class="c-toggle-theme">
         <label for="js-toggle-theme__check" class="c-toggle-theme__label">
-          <input id="js-toggle-theme__check" type="checkbox" class="c-toggle-theme__check" name="dark">
+          <input id="js-toggle-theme__check" type="checkbox" class="c-toggle-theme__check" name="dark" checked={state.isDark} onchange="{onChange}">
           <div class="c-toggle-theme__bg">
-            <div class="c-toggle-theme__handle"></div>
+            <div class={ classNames({
+              'c-toggle-theme__handle': true,
+              'is-light': !state.isDark
+            })}></div>
           </div>
         </label>
       </div>
@@ -13,6 +16,29 @@
   </div>
 
   <script>
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const body = document.body;
+
+    export default {
+      state: {
+        isDark: isDark,
+      },
+      onChange(e) {
+        this.update({
+          isDark: e.target.checked,
+          handleClassNames: {
+            
+          }
+        });
+      },
+      onUpdated() {
+        if ( this.state.isDark ) {
+          body.classList.remove('is-light');
+        } else {
+          body.classList.add('is-light');
+        }
+      }
+    }
   </script>
 
   <style>
@@ -46,7 +72,8 @@
     }
 
     .c-toggle-theme__bg {
-      width: 40px;
+      position: relative;
+      width: 38px;
       height: 20px;
       border-radius: 10px;
       border: 1px solid #ccc;
@@ -54,6 +81,9 @@
     }
 
     .c-toggle-theme__handle {
+      position: absolute;
+      left: 0;
+      top: 0;
       width: 18px;
       height: 18px;
       border-radius: 50%;
@@ -61,6 +91,12 @@
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
       background: #fff;
       cursor: pointer;
+      transition: all 0.2s ease;
+      transform: translate(100%, 0);
+    }
+
+    .c-toggle-theme__handle.is-light {
+      transform: translate(0, 0);
     }
   </style>
 </change-theme-component>
