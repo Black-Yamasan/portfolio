@@ -12,6 +12,7 @@
     "cssnano": "4.1.10",
     "jest": "25.3.0",
     "node-sass": "4.13.1",
+    "pixi.js": "5.2.1",
     "postcss-cli": "7.1.0",
     "postcss-loader": "3.0.0",
     "riot": "4.12.0",
