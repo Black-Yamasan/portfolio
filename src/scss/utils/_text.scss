@@ -19,10 +19,17 @@
       position: absolute;
       left: 0;
       bottom: -0.2em;
-      width: 100%;
+      width: 0;
       height: 0.2em;
       background: $COLOR_SKY;
+      opacity: 0;
       content: '';
+    }
+
+    &.is-scrollIn {
+      &:before {
+        animation: showBorder 0.4s $easeInOutCubic 0.5s forwards;
+      }
     }
   }
 

@@ -1,7 +1,7 @@
 <about-component>
   <section class="l-section l-section-first">
     <div class="o-heading u-ta-c u-mb-60 js-scrollIn">
-      <h2 class="o-heading__inner"><span class="o-heading__text">About</span></h2>
+      <h2 class="o-heading__inner js-showBorder"><span class="o-heading__text">About</span></h2>
     </div>
     <section class="l-content u-mb-90 js-scrollIn">
       <h3 class="o-sub-heading u-ta-c u-mb-40">Introduction</h3>
@@ -64,7 +64,9 @@
       },
       onMounted() {
         const $scrollIn = this.$$('.js-scrollIn');
+        const $showBorder = this.$$('.js-showBorder');
         scrollAddClass($scrollIn, 1);
+        scrollAddClass($showBorder, 1);
       },
     }
   </script>

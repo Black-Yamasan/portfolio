@@ -2,13 +2,13 @@
 
 @import './mixins/media';
 
+@import './libs/easing';
+@import './libs/animation';
+
 @import './utils/reset';
 @import './utils/icon';
 @import './utils/text';
 @import './utils/margin';
-
-@import './libs/easing';
-@import './libs/animation';
 
 @import './components/mv';
 @import './components/about';

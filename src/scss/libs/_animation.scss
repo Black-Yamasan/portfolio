@@ -8,3 +8,14 @@
     transform: translate(0, 0);
   }
 }
+
+@keyframes showBorder {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
