@@ -30,8 +30,6 @@ body {
   overflow: hidden;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
 
   @media (prefers-color-scheme: dark) {
     background: $DARK_THEME_BLACK;
