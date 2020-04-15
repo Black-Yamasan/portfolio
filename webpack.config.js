@@ -19,7 +19,6 @@ glob.sync('./src/js/*.js', {
 module.exports = {
   entry: entries,
   mode: modeValue,
-  target: 'node',
   output: {
     path: path.resolve(__dirname, `${destDir}/assets/js/`),
     filename: '[name]'
@@ -38,7 +37,7 @@ module.exports = {
   devtool: !isProd ? 'inline-source-map' : false,
   module: {
     rules: [{
-      test: /\.js|riot$/,
+      test: /\.js$/,
       use: [{
         loader: 'babel-loader',
         options: {
@@ -47,9 +46,7 @@ module.exports = {
           ]
         }
       }],
-      exclude: {
-        include: /node_modules/
-      },
+      exclude: /node_modules/
     },
     {
       test: /\.riot$/,

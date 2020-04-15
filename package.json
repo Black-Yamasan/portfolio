@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@babel/core": "7.9.0",
     "@babel/preset-env": "7.9.5",
     "@riotjs/compiler": "4.8.2",
     "@riotjs/webpack-loader": "4.0.3",
@@ -8,6 +9,7 @@
     "babel-jest": "25.3.0",
     "babel-loader": "8.1.0",
     "config": "3.3.1",
+    "core-js": "3.6.5",
     "css-loader": "3.5.2",
     "cssnano": "4.1.10",
     "jest": "25.3.0",
@@ -27,7 +29,7 @@
     "webpack-dev-server": "3.10.3"
   },
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "NODE_ENV=development webpack --mode development & webpack-dev-server --mode development",
     "prod": "NODE_ENV=production webpack --mode production"
   }
 }
