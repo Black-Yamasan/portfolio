@@ -1,6 +1,8 @@
 <links-component>
   <section class="l-section-last">
-    <h2 class="o-heading u-ta-c u-mb-60">Links</h2>
+    <div class="o-heading u-ta-c u-mb-60">
+      <h2 class="o-heading__inner"><span class="o-heading__text">Links</span></h2>
+    </div>
     <ul class="l-content c-link">
       <li class="c-link__child" each={ (item, i) in state.items }>
         <a class="c-link__link u-text-link" href="{item.url}" target="_blank">{item.name}</a>
