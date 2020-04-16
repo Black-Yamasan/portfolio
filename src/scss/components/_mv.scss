@@ -6,8 +6,13 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    min-height: 600px;
     background: hsl(220,45%,10%);
     overflow: hidden;
+
+    @include MEDIA_SP {
+      min-height: initial;
+    }
   }
 
   &__canvas {
