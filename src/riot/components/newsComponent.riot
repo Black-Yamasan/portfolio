@@ -15,8 +15,7 @@
 
   <script>
     import { scrollAddClass } from '$Controller/_scrollAddClass';
-    // const KEY = 'Basic Zm5BRHBjcEUzeEFHRTkzc1pmYzJVb2JVQXBaTDBzUnZsZUktb3RDTzpuZXdzOnNlcnZlcg==';
-    const KEY = 'fnADpjfomBACCjiXVck6RkJ3SnOEuObwAj7qwcPJ';
+    const SECRET = 'fnADpjmBp3ACCSNtMAqtj1quHHiPSsU4pYmvn3PP';
 
     export default {
       state: {
@@ -29,8 +28,7 @@
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'read-news': KEY,
-            Authorization: KEY
+            Authorization: `Bearer ${SECRET}`
           },
           body: JSON.stringify({query: "{ allLists(_size: 3){data {title url}} }"})
         })
