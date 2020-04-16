@@ -17,7 +17,8 @@
         items: [
           { id: 'github', url: 'https://github.com/Black-Yamasan', name: 'GitHub' },
           { id: 'qiita', url: 'https://qiita.com/', name: 'Qiita' },
-          { id: 'twitter', url: 'https://twitter.com/yama_twUse', name: 'Twitter' }
+          { id: 'twitter', url: 'https://twitter.com/yama_twUse', name: 'Twitter' },
+          { id: 'codepen', url: 'https://codepen.io/yamasa-n', name: 'Codepen' }
         ]
       },
       onMounted() {
@@ -37,11 +38,18 @@
     .c-link {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     .c-link__child {
-      margin: 0 20px;
+      margin: 0 1em;
       font-size: 1.4rem;
+    }
+
+    @media screen and ( max-width: 768px ) {
+      .c-link__child {
+        margin: 0 1em 1em 1em;
+      }
     }
 
   </style>
