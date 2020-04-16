@@ -1,28 +1,52 @@
 import '../scss/_styles.scss';
 import * as PIXI from 'pixi.js';
-// import { showMv } from '$Controller/_mv';
+import { showMv } from '$Controller/_mv';
 import { showNews } from '$Controller/_news';
 import { showAbout } from '$Controller/_about';
 import { showLinks } from '$Controller/_links';
 import { showChangeTheme } from '$Controller/_changeTheme';
 import { scrollMvControll } from '$Controller/_scrollMvControll';
 
+showMv();
 showChangeTheme();
 showAbout();
 showNews();
 showLinks();
-// showMv();
 
 scrollMvControll();
-
 
 
 const canvas = document.getElementById('js-c-mv__canvas');
 let isResize = false;
 
 const app = new PIXI.Application({
-  
+  antialias: true
 });
+
+// const createGradTexture = () => {
+//   const quality = 256*4;
+//   const ctx = canvas.getContext('2d');
+//   canvas.width = quality;
+//   canvas.height = 1;
+
+//   const grd = ctx.createLinearGradient(0, 0, quality, 0);
+//   grd.addColorStop(0, 'hsla(200, 50%, 50%, 0.2)');
+//   grd.addColorStop(1, 'hsla(280, 50%, 50%, 0.2)');
+//   ctx.fillStyle = grd;
+//   ctx.fillRect(0, 0, quality, 1);
+
+//   return PIXI.Texture.from(canvas);
+// }
+
+// const gradTexture = createGradTexture();
+// const sprite = new PIXI.Sprite(gradTexture);
+
+// sprite.position.set(50, 100);
+// sprite.rotation = 45;
+// sprite.width = 400;
+// sprite.height = 1000;
+// app.state.addChild(sprite);
+
 // const catImgSize = {
 //   width: 351,
 //   height: 258

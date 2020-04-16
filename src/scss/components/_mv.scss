@@ -1,5 +1,6 @@
 .c-mv {
   width: 100%;
+  overflow: hidden;
 
   &__inner {
     position: relative;
@@ -15,5 +16,24 @@
     top: 0;
     width: 100%;
     height: 100%;
+  }
+
+  &__title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4.2rem;
+    font-weight: $FONT_W_M;
+    font-family: $FONT_RUBIK;
+    letter-spacing: 100/1000+em;
+    line-height: percentage(48/42);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    &.is-loaded {
+      opacity: 1;
+    }
   }
 }
