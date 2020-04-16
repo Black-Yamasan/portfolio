@@ -19,7 +19,7 @@ export const scrollMvControll = () => {
   };
 
   const scrollControll = () => {
-    $mvInner.style.opacity = 1 - `${window.pageYOffset/500}`;
+    $mvInner.style.opacity = 1 - `${window.pageYOffset/window.innerHeight}`;
     $canvas.style.top = `${window.pageYOffset}px`;
   };
 
