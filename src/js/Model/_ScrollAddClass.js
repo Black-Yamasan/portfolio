@@ -18,7 +18,6 @@ export default class ScrollAddClass {
     if ( this.isShow ) return;
     const objRect = this.obj.getBoundingClientRect();
     if ( (window.scrollY || window.pageYOffset) > objRect.top + (window.scrollY || window.pageYOffset) - window.innerHeight / this.devideHeight ) {
-      console.log(this.obj, this.devideHeight);
       this.isShow = true;
       this.onAfterScrolled();
     }

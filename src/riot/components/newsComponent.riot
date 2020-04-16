@@ -4,40 +4,49 @@
       <h2 class="o-heading__inner js-showBorder"><span class="o-heading__text">News</span></h2>
     </div>
     <div class="l-content js-scrollIn">
-      <ul class="c-news">
+      <ul class="c-news" if={!state.isError}>
         <li class="c-news__child" each={ (item, i) in state.items }>
           <a href="{ item.url }" class="c-news__link u-text-link" target="_blank">{ item.title }</a>
         </li>
       </ul>
+      <p class="o-text u-ta-c" if={state.isError}>データを取得出来ませんでした。</p>
     </div>
   </section>
 
   <script>
     import { scrollAddClass } from '$Controller/_scrollAddClass';
-    const KEY = 'Basic Zm5BRHBYcGMzbkFDRThkY29VRm9FVXpWYWJ3Ti1iOVlnVGQxUElVYTpuZXdzOnNlcnZlcg==';
+    // const KEY = 'Basic Zm5BRHBjcEUzeEFHRTkzc1pmYzJVb2JVQXBaTDBzUnZsZUktb3RDTzpuZXdzOnNlcnZlcg==';
+    const KEY = 'fnADpjfomBACCjiXVck6RkJ3SnOEuObwAj7qwcPJ';
 
     export default {
       state: {
-        items: []
+        items: [],
+        isError: false,
       },
-      // onBeforeMount() {
-      //   fetch('https://graphql.fauna.com/graphql', {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //       'Accept': 'application/json',
-      //       Authorization: KEY
-      //     },
-      //     body: JSON.stringify({query: "{ allLists(_size: 3){data {title url}} }"})
-      //   })
-      //   .then(r => r.json())
-      //   .then((res) => {
-      //     console.log(res)
-      //     this.update({
-      //       items: res.data.allLists.data
-      //     })
-      //   });
-      // },
+      onBeforeMount() {
+        fetch('https://graphql.fauna.com/graphql', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            Authorization: KEY
+          },
+          body: JSON.stringify({query: "{ allLists(_size: 3){data {title url}} }"})
+        })
+        .then(r => r.json())
+        .then((res) => {
+          if (typeof res.data === 'undefined' ) {
+            this.update({
+              isError: true
+            })
+            return;
+          }
+          this.update({
+            items: res.data.allLists.data,
+            isError: false
+          })
+        });
+      },
       onMounted() {
         const $scrollIn = this.$$('.js-scrollIn');
         const $showBorder = this.$$('.js-showBorder');
