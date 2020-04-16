@@ -4,5 +4,7 @@ htdocs/*
 dist/
 !dist/
 dist/assets/
+!dist/assets/
+dist/assets/js/
 yarn.lock
 yarn-error.log
