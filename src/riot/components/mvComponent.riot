@@ -1,10 +1,64 @@
 <mv-component>
-  <div class="c-mv">
+  <div class="c-mv" id="js-c-mv">
     <div class="c-mv__inner">
       <canvas id="js-c-mv__canvas" class="c-mv__canvas"></canvas>
     </div>
   </div>
   <script>
+    // import * as PIXI from 'pixi.js';
+    
+    export default {
+      onMounted() {
+        // const screen = document.getElementById('screen');
+        // const catImgSize = {
+        //   width: 351,
+        //   height: 258
+        // };
+        // let isResize = false;
+
+        // const app = new PIXI.Application({
+        //   width: window.innerWidth,
+        //   height: window.innerHeight,
+        //   autoResize: true,
+        //   resolution: devicePixelRatio,
+        //   view: screen,
+        //   backgroundColor: '0xffffff'
+        // });
+
+        // const container = new PIXI.Container();
+        // app.stage.addChild(container);
+
+        // const catImg = new PIXI.Sprite.from('assets/images/img_cat.png');
+        // catImg.width = (500 / 600) * catImgSize.width;
+        // catImg.height = (500 / 600) * catImgSize.height;
+        // catImg.x = (window.innerWidth / 2) - (catImg.width / 2);
+        // catImg.y = window.innerHeight / 2 - (catImg.height / 2);
+        // container.addChild(catImg);
+
+        // const alphaFilter = new PIXI.filters.AlphaFilter(1);
+        // const blurFilter = new PIXI.filters.BlurFilter(270, 1, 10, 0);
+        // container.filters = [alphaFilter, blurFilter];
+
+
+        // const onResize = () => {
+        //   if ( !isResize ) {
+        //     window.requestAnimationFrame(() => {
+        //       app.renderer.resize(window.innerWidth, window.innerHeight);
+        //       catImg.width = (500 / 600) * catImgSize.width;
+        //       catImg.height = (500 / 600) * catImgSize.height;
+        //       catImg.x = (window.innerWidth / 2) - (catImg.width / 2);
+        //       catImg.y = window.innerHeight / 2 - (catImg.height / 2);
+        //       isResize = false;
+        //     });
+        //     isResize = true;
+        //   }
+        // };
+
+        // window.addEventListener('resize', onResize, true);
+
+      }
+    }
+
   </script>
 
   <style>
