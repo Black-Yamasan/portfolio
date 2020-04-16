@@ -19,7 +19,8 @@ const canvas = document.getElementById('js-c-mv__canvas');
 
 const app = new PIXI.Application({
   antialias: true,
-  view: canvas
+  view: canvas,
+  backgroundColor: '0x000022'
 });
 
 const starImage = PIXI.Texture.from('/assets/images/star.png');
@@ -33,7 +34,7 @@ const starStretch = 0.8;
 const starBaseSize = 0.02;
 
 const randomizeStar = (star, initial) => {
-  star.z = initial ? Math.random() * 1000 : cameraZ + Math.random() * 100 + 1000;
+  star.z = initial ? Math.random() * 800 : cameraZ + Math.random() * 100 + 800;
 
   const deg = Math.random() * Math.PI * 2;
   const distance = Math.random() * 50 + 1;
@@ -75,7 +76,7 @@ app.ticker.add((delta) => {
     const dxCenter = star.sprite.x - app.renderer.screen.width / 2;
     const dyCenter = star.sprite.y - app.renderer.screen.height / 2;
     const distanceCenter = Math.sqrt(dxCenter * dxCenter + dyCenter * dyCenter);
-    const distanceScale = Math.max(0, (600 - z) / 800);
+    const distanceScale = Math.max(0, (800 - z) / 1000);
     star.sprite.scale.x = distanceScale * starBaseSize;
 
     star.sprite.scale.y = distanceScale * starBaseSize + distanceScale * speed * starStretch * distanceCenter / app.renderer.screen.width;
